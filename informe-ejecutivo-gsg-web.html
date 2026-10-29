@@ -1,0 +1,942 @@
+<title>Informe Ejecutivo GSG Education</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;600;700&display=swap">
+<style>
+
+  :root{
+    --void:#060606;
+    --void-soft:#0F0F0F;
+    --void-card:#131313;
+    --line:#242220;
+    --gold:#C9A84C;
+    --gold-soft:#C9A96E;
+    --gold-dim:#8E763A;
+    --ink:#EDE7D8;
+    --ink-dim:#B4AC98;
+    --ink-faint:#807A6C;
+    --radius:6px;
+    --maxw:880px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--void);
+    color:var(--ink);
+    font-family:'DM Sans',sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--ink);
+    margin:0 0 .35em 0;
+    line-height:1.15;
+    font-weight:600;
+  }
+  .cinzel{font-family:'Cinzel',serif;}
+  a{color:var(--gold);}
+
+  .shell{display:flex; min-height:100vh;}
+  nav.sidebar{
+    width:256px; flex:0 0 256px;
+    background:var(--void-soft);
+    border-right:1px solid var(--line);
+    color:#C9C3B4;
+    position:sticky; top:0; height:100vh;
+    overflow-y:auto;
+    padding:32px 22px 40px;
+  }
+  .brandmark{display:flex; align-items:center; gap:12px; margin-bottom:6px;}
+  .brandmark svg{width:36px; height:36px; flex:0 0 auto;}
+  .brand-name{font-family:'Cinzel',serif; font-weight:600; font-size:.98rem; color:#fff; letter-spacing:.06em;}
+  .brand-name .search{color:var(--gold);}
+  .brand-tagline{
+    font-size:.65rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--gold-dim); margin:2px 0 6px 48px;
+  }
+  .brand-client{
+    font-size:.72rem; margin:0 0 24px 48px; color:var(--ink-faint);
+  }
+  .brand-client strong{color:var(--gold-soft);}
+  nav.sidebar .nav-group-label{
+    font-size:.66rem; text-transform:uppercase; letter-spacing:.12em;
+    color:var(--ink-faint); margin:22px 0 8px;
+  }
+  nav.sidebar a{
+    display:block; color:#B4AC98; text-decoration:none;
+    font-size:.87rem; padding:6px 0 6px 12px; border-left:2px solid transparent;
+    transition:.15s;
+  }
+  nav.sidebar a:hover{color:var(--gold-soft); border-left-color:var(--gold);}
+  nav.sidebar a.sourced{color:var(--ink); font-weight:700;}
+  nav.sidebar a.sourced:hover{color:var(--gold-soft);}
+  nav.sidebar .quicklinks{margin-top:28px; padding-top:18px; border-top:1px solid var(--line);}
+  nav.sidebar .quicklinks a{
+    background:rgba(201,168,76,.08); border-radius:4px; margin-bottom:6px;
+    padding:9px 10px 9px 12px; border-left:2px solid var(--gold); font-size:.81rem; color:var(--gold-soft);
+  }
+
+  main{flex:1; min-width:0;}
+
+  .topbar{
+    background:var(--void-card); color:var(--ink-dim);
+    padding:14px 44px; display:flex; gap:26px; flex-wrap:wrap;
+    align-items:center; font-size:.82rem;
+    border-bottom:1px solid var(--gold-dim);
+  }
+  .topbar strong{color:var(--gold); font-weight:600;}
+  .topbar .divider{width:1px; height:14px; background:var(--line);}
+
+  .hero{
+    padding:64px 44px 46px;
+    background:
+      radial-gradient(ellipse at 88% -10%, rgba(201,168,76,.10), transparent 55%),
+      var(--void);
+    border-bottom:1px solid var(--line);
+  }
+  .hero .eyebrow{
+    font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--gold); font-weight:600; margin-bottom:16px;
+    display:flex; align-items:center; gap:10px;
+    font-family:'Cinzel',serif;
+  }
+  .hero h1{font-size:2.7rem; max-width:760px; font-weight:600; color:#fff;}
+  .hero .lede{max-width:660px; font-size:1.06rem; color:var(--ink-dim); margin-top:16px;}
+  .hero .promise{
+    margin-top:26px; padding:20px 24px; background:var(--void-card);
+    border-left:2px solid var(--gold); border-radius:0 6px 6px 0;
+    max-width:660px; font-family:'Cormorant Garamond',serif; font-size:1.25rem;
+    font-weight:600; font-style:italic; color:var(--gold-soft);
+  }
+
+  section{padding:52px 44px; max-width:var(--maxw); margin:0 auto; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-tag{
+    font-size:.7rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--gold-dim); font-weight:600; margin-bottom:8px; font-family:'Cinzel',serif;
+  }
+  section h2{font-size:1.75rem; margin-bottom:.3em; color:#fff;}
+  section h3{font-size:1.18rem; margin-top:28px; color:var(--gold-soft); font-weight:600;}
+  section p{color:var(--ink-dim); max-width:70ch;}
+  .subnote{color:var(--ink-faint); font-size:.88rem;}
+
+  .seal-divider{
+    display:flex; align-items:center; gap:14px; margin:0 44px;
+    max-width:var(--maxw); margin-left:auto; margin-right:auto;
+  }
+  .seal-divider .line{flex:1; height:1px; background:linear-gradient(90deg,var(--line),transparent);}
+  .seal-divider .line.right{background:linear-gradient(90deg,transparent,var(--line));}
+  .seal-divider svg{width:22px; height:22px;}
+
+  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:18px;}
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px;}
+  .card{
+    background:var(--void-card); border:1px solid var(--line);
+    border-radius:var(--radius); padding:18px 20px;
+  }
+  .card h4{font-size:1.02rem; margin-bottom:6px; color:var(--ink);}
+  .card p{margin:0; font-size:.9rem; color:var(--ink-dim);}
+  .pill{
+    display:inline-block; font-size:.68rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+    padding:3px 10px; border-radius:2px; background:rgba(201,168,76,.1); color:var(--gold);
+    margin-bottom:8px; border:1px solid var(--gold-dim); font-family:'Cinzel',serif;
+  }
+
+  table{width:100%; border-collapse:collapse; margin-top:18px; font-size:.9rem; background:var(--void-card); border-radius:var(--radius); overflow:hidden;}
+  thead th{
+    background:#000; color:var(--gold); text-align:left; padding:11px 14px;
+    font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; font-weight:600; font-family:'Cinzel',serif;
+    border-bottom:1px solid var(--gold-dim);
+  }
+  tbody td{padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink-dim);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.015);}
+  td.label{font-weight:600; color:var(--ink); white-space:nowrap;}
+
+  .phase{display:grid; grid-template-columns:44px 1fr; gap:18px; margin-top:22px;}
+  .phase .num{
+    width:44px; height:44px; border-radius:50%; background:#000; border:1px solid var(--gold-dim);
+    color:var(--gold); display:flex; align-items:center; justify-content:center;
+    font-family:'Cinzel',serif; font-weight:600; font-size:.98rem;
+  }
+  .phase .num.active{background:var(--gold); color:#060606; border-color:var(--gold);}
+  .phase-body{padding-bottom:8px; border-left:1px solid var(--line); padding-left:18px; margin-left:22px; margin-top:-40px; padding-top:44px;}
+  .phase-body h4{margin-bottom:4px; font-size:1.05rem; color:var(--ink);}
+  .phase-body .result{
+    margin-top:8px; font-size:.85rem; background:rgba(201,168,76,.08); color:var(--gold-soft);
+    padding:8px 12px; border-radius:4px; display:inline-block; border:1px solid var(--gold-dim);
+  }
+
+  details.acc{
+    background:var(--void-card); border:1px solid var(--line); border-radius:var(--radius);
+    margin-top:10px; overflow:hidden;
+  }
+  details.acc summary{
+    cursor:pointer; list-style:none; padding:14px 18px; font-weight:600; color:var(--ink);
+    display:flex; justify-content:space-between; align-items:center; font-size:.95rem;
+  }
+  details.acc summary::-webkit-details-marker{display:none;}
+  details.acc summary::after{content:'+'; font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--gold); flex:0 0 auto;}
+  details.acc[open] summary::after{content:'–';}
+  details.acc[open] summary{border-bottom:1px solid var(--line);}
+  details.acc .acc-body{padding:14px 18px 18px; font-size:.9rem; color:var(--ink-dim);}
+  details.acc .acc-body p{margin:.5em 0;}
+  details.acc .acc-body .say{
+    background:rgba(201,168,76,.06); border-left:2px solid var(--gold); padding:10px 14px;
+    border-radius:0 4px 4px 0; margin:8px 0; font-style:italic; color:var(--ink);
+  }
+
+  .paybox{background:#000; border:1px solid var(--gold-dim); border-radius:8px; padding:28px 30px; margin-top:22px;}
+  .paybox h3{color:var(--gold); margin-top:0; font-family:'Cinzel',serif; font-size:1.1rem; letter-spacing:.03em;}
+  .pay-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:16px;}
+  .pay-card{background:var(--void-card); border:1px solid var(--line); border-radius:6px; padding:16px;}
+  .pay-card .plan{font-weight:600; font-size:.9rem; color:var(--ink); margin-bottom:2px;}
+  .pay-card .amount{font-family:'Cormorant Garamond',serif; font-weight:700; color:var(--gold); font-size:1.15rem; margin-bottom:10px;}
+  .pay-card a.link{
+    display:block; word-break:break-all; font-size:.72rem; color:var(--ink-dim);
+    background:#000; padding:8px 10px; border-radius:4px; text-decoration:none; border:1px solid var(--line);
+  }
+  .pay-card a.link:hover{color:var(--gold-soft); border-color:var(--gold-dim);}
+
+  .dodont{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:18px;}
+  .dodont .box{border-radius:var(--radius); padding:16px 18px; border:1px solid var(--line);}
+  .dodont .do{background:rgba(201,168,76,.05);}
+  .dodont .dont{background:rgba(150,40,30,.08); border-color:#4A2A24;}
+  .dodont h4{margin-bottom:8px; font-size:.85rem; text-transform:uppercase; letter-spacing:.06em; font-family:'Cinzel',serif;}
+  .dodont .do h4{color:var(--gold-soft);}
+  .dodont .dont h4{color:#D08370;}
+  .dodont ul{margin:0; padding-left:18px; font-size:.87rem; color:var(--ink-dim);}
+  .dodont li{margin-bottom:5px;}
+
+  .callout{
+    background:rgba(201,168,76,.07); border:1px solid var(--gold-dim); border-radius:var(--radius);
+    padding:16px 20px; margin-top:18px; font-size:.9rem; color:var(--ink-dim);
+  }
+  .callout strong{color:var(--gold);}
+
+  footer{
+    padding:34px 44px 60px; max-width:var(--maxw); margin:0 auto;
+    color:var(--ink-faint); font-size:.8rem; display:flex; align-items:center; gap:10px;
+  }
+  footer svg{width:18px; height:18px; opacity:.6;}
+
+  .checklist{list-style:none; padding:0; margin-top:16px;}
+  .checklist li{
+    display:flex; gap:10px; align-items:flex-start; padding:7px 0; font-size:.9rem; color:var(--ink-dim);
+    border-bottom:1px dashed var(--line);
+  }
+  .checklist li:last-child{border-bottom:none;}
+  .checklist .box{flex:0 0 15px; width:15px; height:15px; border:1px solid var(--gold-dim); border-radius:2px; margin-top:2px;}
+
+  @media (max-width:900px){
+    .shell{flex-direction:column;}
+    nav.sidebar{position:relative; width:100%; height:auto; flex:none;}
+    .grid-2, .grid-3, .pay-grid, .dodont{grid-template-columns:1fr;}
+    .hero, section, .topbar, footer{padding-left:22px; padding-right:22px;}
+    .seal-divider{margin-left:22px; margin-right:22px;}
+    .hero h1{font-size:2.1rem;}
+  }
+
+  .calc-row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0; border-bottom:1px solid var(--line);}
+  .calc-row label{color:var(--ink); font-size:.92rem;}
+  .calc-row input{width:130px; background:var(--void-card); border:1px solid var(--gold-dim); color:var(--gold-soft); font-family:'DM Sans',sans-serif; font-size:1rem; padding:8px 10px; border-radius:4px; text-align:right;}
+  .calc-row input:focus{outline:none; border-color:var(--gold);}
+  @media (max-width:700px){
+    table{display:block; overflow-x:auto; -webkit-overflow-scrolling:touch;}
+    td.label{white-space:normal;}
+    .calc-row input{width:100px;}
+  }
+  .pend{display:inline-block; font-size:.62rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; padding:2px 8px; border-radius:2px; color:#D9B26A; border:1px dashed var(--gold-dim); margin-left:8px; vertical-align:middle; font-family:'Cinzel',serif;}
+  .calc-sep{margin:22px 0 4px; font-family:'Cinzel',serif; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dim);}
+  details.acc .acc-body ul{margin:.5em 0; padding-left:18px;}
+  details.acc .acc-body li{margin-bottom:6px;}
+  .pitch-frame{margin-top:18px; border:1px solid var(--gold-dim); border-radius:var(--radius); overflow:hidden; background:#000;}
+  .pitch-frame iframe{display:block; width:100%; height:760px; border:0;}
+  button.pitch-open{background:var(--gold); color:#060606; border:none; font-family:'Cinzel',serif; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; padding:12px 20px; border-radius:4px; cursor:pointer;}
+  button.pitch-open:hover{background:var(--gold-soft);}
+  @media (max-width:700px){ .pitch-frame iframe{height:600px;} }
+  .pay-card span.link{display:block; font-size:.72rem; color:var(--ink-faint); background:#000; padding:8px 10px; border-radius:4px; border:1px dashed var(--line);}
+
+  /* Texto justificado sin distorsión: sin guiones, sin estirar líneas cortas */
+  p, li, .say, .callout, .card p, .phase-body p, .acc-body p, tbody td, .hero .lede, .subnote{
+    text-align:justify; text-justify:inter-word; hyphens:none; -webkit-hyphens:none;
+    text-align-last:left;
+  }
+  td.label, .amount, .plan, .pill, .section-tag, h1, h2, h3, h4, .checklist li, .topbar, .brand-client, .brand-tagline, nav.sidebar a, .pay-card .subnote, .hero .promise{
+    text-align:left;
+  }
+
+  /* ===== Diseño web Closer Search ===== */
+  body{padding-top:76px;}
+  header.site{position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(6,6,6,.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1180px; margin:0 auto; padding:0 28px; height:76px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .logo{display:flex; align-items:center; gap:12px; text-decoration:none;}
+  .logo svg{width:38px; height:38px; flex:0 0 auto;}
+  .logo-text{display:flex; flex-direction:column; line-height:1.15;}
+  .logo .brand-name{font-family:'Cinzel',serif; font-weight:600; font-size:1.02rem; color:#fff; letter-spacing:.08em;}
+  .logo .brand-name .search{color:var(--gold);}
+  .logo-sub{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.86rem; color:var(--ink-faint);}
+  .site-nav{display:flex; align-items:center; gap:6px;}
+  .site-nav > a, .dd-btn{color:var(--ink-dim); text-decoration:none; font-family:'DM Sans',sans-serif; font-size:.9rem; font-weight:500; padding:10px 14px; background:none; border:none; cursor:pointer; border-radius:4px;}
+  .site-nav > a:hover, .dd-btn:hover, .dd:focus-within .dd-btn{color:var(--gold-soft);}
+  .caret{font-size:.7rem; opacity:.7;}
+  .dd{position:relative;}
+  .dd-menu{position:absolute; top:100%; left:0; min-width:270px; background:var(--void-soft); border:1px solid var(--line); border-top:2px solid var(--gold); border-radius:0 0 6px 6px; padding:8px 0; display:none; box-shadow:0 18px 40px rgba(0,0,0,.5);}
+  .dd:hover .dd-menu, .dd:focus-within .dd-menu{display:block;}
+  .dd-menu a{display:block; padding:9px 18px; color:var(--ink-dim); text-decoration:none; font-size:.88rem;}
+  .dd-menu a:hover{color:var(--gold-soft); background:var(--gold-glow, rgba(201,168,76,.08));}
+  .site-nav > a.nav-cta{background:var(--gold); color:#060606; font-weight:600; margin-left:8px; padding:11px 20px;}
+  .site-nav > a.nav-cta:hover{background:var(--gold-soft); color:#060606;}
+  .menu-toggle{display:none; background:none; border:1px solid var(--line); border-radius:4px; width:44px; height:44px; cursor:pointer; flex-direction:column; justify-content:center; align-items:center; gap:5px;}
+  .menu-toggle span{display:block; width:20px; height:2px; background:var(--gold);}
+  main{max-width:none;}
+  section{scroll-margin-top:90px;}
+  .web-hero{padding:96px max(28px, calc((100% - 1124px) / 2)) 70px; max-width:none; margin:0; border-bottom:1px solid var(--line);
+    background:radial-gradient(ellipse at 85% 0%, rgba(201,168,76,.13), transparent 55%), radial-gradient(ellipse at 0% 100%, rgba(201,168,76,.05), transparent 50%);}
+  .web-hero h1{font-size:3.6rem; line-height:1.08; max-width:900px; letter-spacing:-.01em;}
+  .web-hero h1 em{font-style:italic; color:var(--gold);}
+  .web-hero .lede{max-width:720px; font-size:1.12rem;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-top:30px;}
+  .btn-primary, .btn-secondary{display:inline-block; text-decoration:none; font-family:'DM Sans',sans-serif; font-weight:600; font-size:.95rem; padding:15px 26px; border-radius:4px; transition:.15s;}
+  .btn-primary{background:var(--gold); color:#060606;}
+  .btn-primary:hover{background:var(--gold-soft);}
+  .btn-secondary{border:1px solid var(--gold-dim); color:var(--gold-soft);}
+  .btn-secondary:hover{border-color:var(--gold); color:var(--gold);}
+  .hero-stats{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin-top:46px; background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden; max-width:900px;}
+  .hero-stats > div{background:var(--void-soft); padding:20px 18px;}
+  .hero-stats .n{display:block; font-family:'Cormorant Garamond',serif; font-weight:700; font-size:2rem; color:var(--gold); line-height:1;}
+  .hero-stats .l{display:block; font-size:.78rem; color:var(--ink-dim); margin-top:8px; line-height:1.35;}
+  .hero-meta{margin-top:26px; font-size:.8rem; color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:8px;}
+  .hero-meta strong{color:var(--gold); font-weight:600;}
+  .web-hero .promise{max-width:900px;}
+  .site-footer{max-width:none; margin-top:40px; padding:56px 28px 30px; background:var(--void-soft); border-top:1px solid var(--line); display:block; text-align:left;}
+  .ft-grid{max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:34px;}
+  .ft-grid h5{font-family:'Cinzel',serif; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin:0 0 12px;}
+  .ft-grid a, .ft-grid span{display:block; color:var(--ink-dim); text-decoration:none; font-size:.88rem; margin-bottom:8px;}
+  .ft-grid a:hover{color:var(--gold-soft);}
+  .ft-brand p{font-size:.88rem; color:var(--ink-faint); margin-top:14px; max-width:300px; text-align:left;}
+  .ft-brand .logo span{display:inline; margin:0;}
+  .ft-brand .logo .logo-text{display:flex;}
+  .ft-bottom{max-width:1180px; margin:34px auto 0; padding-top:20px; border-top:1px solid var(--line); font-size:.78rem; color:var(--ink-faint);}
+  .site-footer svg{width:38px; height:38px; opacity:1;}
+  @media (max-width:980px){
+    .menu-toggle{display:flex;}
+    header.site{backdrop-filter:none; -webkit-backdrop-filter:none; background:var(--void);}
+    .site-nav{display:none; position:fixed; top:76px; left:0; right:0; height:calc(100vh - 76px); background:var(--void); flex-direction:column; align-items:stretch; gap:0; padding:12px 22px 40px; overflow-y:auto; border-top:1px solid var(--line);}
+    body.menu-open .site-nav{display:flex;}
+    .site-nav > a, .dd-btn{padding:14px 4px; font-size:1rem; text-align:left; border-bottom:1px solid var(--line); border-radius:0;}
+    .dd-btn{width:100%;}
+    .dd-menu{display:block; position:static; border:none; box-shadow:none; background:none; padding:0 0 8px 12px; min-width:0;}
+    .dd-menu a{padding:10px 4px;}
+    .site-nav > a.nav-cta{margin:18px 0 0; text-align:center; border-bottom:none;}
+    .web-hero{padding:56px 22px 46px;}
+    .site-inner{padding:0 18px;}
+    .web-hero h1{font-size:2.3rem;}
+    .hero-stats{grid-template-columns:1fr 1fr;}
+    .ft-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:520px){
+    .web-hero h1{font-size:2rem;}
+    .logo-sub{display:none;}
+    .ft-grid{grid-template-columns:1fr;}
+    .btn-primary,.btn-secondary{width:100%; text-align:center;}
+  }
+
+  .calc-sel{max-width:60%;background:var(--void-card);border:1px solid var(--gold-dim);color:var(--gold-soft);font-family:'DM Sans',sans-serif;font-size:.92rem;padding:8px 10px;border-radius:4px}
+  .calc-row input{width:150px}
+  details.acc summary .sum-meta{display:flex;align-items:center;gap:10px;font-weight:500;color:var(--ink-dim);font-size:.85rem;margin-left:auto;margin-right:14px;white-space:nowrap}
+  details.acc summary{gap:10px}
+  .pill-a{background:var(--gold);color:#060606;border-color:var(--gold)}
+  .pill-b{background:rgba(201,168,76,.1);color:var(--gold)}
+  .pill-c{background:transparent;color:var(--ink-faint);border-color:var(--line)}
+  td .pill{margin:0}
+  td.label.wrap{white-space:normal}
+  td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+  details.acc table td.label{width:30%}
+  details.acc table{margin-top:4px}
+  .checklist li span, .pay-card .subnote, .hero .promise, .promise, .ft-brand p, .box li, .card li{text-align:justify; text-justify:inter-word; hyphens:none; -webkit-hyphens:none; text-align-last:left}
+  @media (max-width:700px){ .calc-row{flex-wrap:wrap} .calc-sel{max-width:100%;width:100%} details.acc summary .sum-meta{display:none} }
+
+
+
+  .checklist.conds .box{border:none;width:16px;height:16px;flex:0 0 16px;margin-top:3px;background:no-repeat center/16px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.8' fill='none' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+  .paybox p{color:var(--ink-dim)}
+  .checklist li{display:flex;gap:12px;align-items:flex-start}
+  .card ul{margin:8px 0 0;padding-left:18px}
+  .card ul li{margin-bottom:6px}
+  td .subnote{display:block;margin-top:4px}
+
+  /* Candidatos */
+  .cand-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:16px;margin-top:14px}
+  .cand-card{background:var(--void-card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;display:flex;flex-direction:column;gap:2px;min-width:0}
+  .cand-card.cand-top{border-color:var(--gold-dim)}
+  .cand-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px}
+  .cand-head h4{font-size:1.45rem;margin:0;color:#fff}
+  .cand-head .pill{margin:4px 0 0;white-space:nowrap}
+  .cand-meta{margin:2px 0 0;font-size:.85rem;color:var(--ink-faint);text-align:left}
+  .cand-card p{font-size:.92rem;margin:0 0 10px;color:var(--ink-dim);text-align:justify;hyphens:none;-webkit-hyphens:none}
+  .cand-card p strong{color:var(--gold-soft)}
+  .cand-card p.cand-val strong{color:var(--ink)}
+  .cand-tbl{margin-top:auto;font-size:.84rem;background:transparent}
+  .cand-tbl td{text-align:left !important;padding:6px 0;border-top:1px solid var(--line);vertical-align:top}
+  .cand-tbl td.label{width:38%;color:var(--ink-faint);padding-right:10px}
+</style>
+<style>
+  header.site{padding-top:env(safe-area-inset-top,0px)}
+  td.label .subnote{display:block;font-weight:400}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+<style>
+  /* GSG: lectura en una columna para que el justificado no se estire */
+  .dec-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:18px}
+  .dec{background:var(--void-card);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:20px 22px}
+  .dec-2{background:linear-gradient(180deg,rgba(201,168,76,.10),var(--void-card) 70%)}
+  .dec h4{font-size:1.5rem;margin:6px 0 8px;color:#fff}
+  .dec p{margin:0;color:var(--ink-dim)}
+  .dec .dec-m{margin-top:10px;font-size:.88rem;color:var(--gold-soft);text-align:left}
+  .formula{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--ink)!important;border-left:2px solid var(--gold);padding-left:14px;text-align:left!important}
+  .pay-grid .subnote{text-align:left}
+  .cand-grid{grid-template-columns:minmax(0,1fr)}
+  .via{margin-top:22px}
+  .via-2{background:linear-gradient(180deg,rgba(201,168,76,.12),#000 55%);border-color:var(--gold)}
+  .via-hd{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .via-n{font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.22em;color:var(--gold);font-weight:600}
+  .via .pill{margin:0}
+  .paybox h3.via-t{font-family:'Cormorant Garamond',serif;font-size:1.9rem;letter-spacing:0;color:#fff;margin:0 0 12px;line-height:1.15}
+  .via-cols{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;margin-top:6px}
+  .via-cols h4{font-family:'Cinzel',serif;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft);margin:14px 0 8px}
+  .via-cols ul{margin:0;padding-left:18px;color:var(--ink-dim);font-size:.95rem}
+  .via-cols li{margin-bottom:6px}
+  .via-model{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+  .via-model strong,.via-when strong{color:var(--gold-soft)}
+  .via-when{margin:0;color:var(--ink-faint)}
+  .paybox p{max-width:none}
+  section p{max-width:none}
+  .card ul li,.dodont li,.via-cols li,.checklist li span,.cand-card p,.acc-body p,.acc-body li,.phase-body p{text-align:justify;text-justify:inter-word;text-align-last:left;hyphens:none;-webkit-hyphens:none;text-wrap:pretty}
+  .dodont{grid-template-columns:minmax(0,1fr)}
+  table:not(.cand-tbl) tbody td{text-align:left}
+  .phase-body{min-width:0}.phase-body p,.subnote{overflow-wrap:anywhere}
+  body{padding-top:calc(76px + env(safe-area-inset-top,0px))}
+  .site-inner{padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}
+  @media (max-width:980px){.site-inner{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+  @media (max-width:900px){.hero,section,footer{padding-left:max(16px,env(safe-area-inset-left,0px))!important;padding-right:max(16px,env(safe-area-inset-right,0px))!important}}
+</style>
+<header class="site" id="siteHeader">
+  <div class="site-inner">
+    <a class="logo" href="#top"><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#C9A84C" stroke-width="3" fill="#060606"/><polygon points="50,16 79,32 79,68 50,84 21,68 21,32" stroke="#8E763A" stroke-width="1.2" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#C9A84C" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="logo-text"><span class="brand-name">CLOSER<span class="search"> SEARCH</span></span><span class="logo-sub">Selección de talento de cierre</span></span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir el menú" id="mt"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="sn"><a href="#decision">La decisión</a>
+<div class="dd"><button class="dd-btn" type="button">Diagnóstico <span class="caret">▾</span></button><div class="dd-menu"><a href="#entendido">Lo que hemos entendido</a><a href="#negocio">Vuestro negocio</a><a href="#recorrido">Recorrido digital</a></div></div>
+<div class="dd"><button class="dd-btn" type="button">Closer Search <span class="caret">▾</span></button><div class="dd-menu"><a href="#quienes">Quiénes somos</a><a href="#especialidad">Asesores de admisiones</a><a href="#experiencia">Experiencia en formación</a><a href="#trabajo">Cómo trabajamos</a><a href="#talento">Talento y cobertura</a><a href="#candidatos">Los candidatos</a></div></div>
+<div class="dd"><button class="dd-btn" type="button">Propuesta <span class="caret">▾</span></button><div class="dd-menu"><a href="#propuesta">Las dos vías</a><a href="#redes">Cómo conviven las dos redes</a><a href="#gobernanza">Quién decide qué</a><a href="#modelo">Modelo económico</a><a href="#retorno">Cómo calcular el retorno</a><a href="#frente-fijo">Frente a un equipo fijo</a><a href="#rentable">Por qué es rentable</a><a href="#encaje">Dónde actuaría el equipo</a><a href="#piloto">Piloto de 90 días</a><a href="#garantias">Continuidad y control</a><a href="#calendario">Calendario</a></div></div>
+<a class="nav-cta" href="#propuesta">Las dos vías</a></nav>
+  </div>
+</header>
+<main id="top">
+<div class="hero web-hero">
+  <div class="eyebrow"><svg viewBox="0 0 100 100" fill="none" width="16" height="16"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#C9A84C" stroke-width="6" fill="none"/></svg>Informe ejecutivo · GSG Education</div>
+  <h1>Una dirección comercial y un equipo de cierre para la nueva etapa de GSG. <em>Dos vías, un mismo método.</em></h1>
+  <p class="lede">Fernando: gracias por la conversación del 27 de octubre. Nos contaste que GSG está reformando su área comercial y que buscáis estabilidad, menos rotación, menos supervisión directa y procesos más fiables. Este informe recoge lo que hemos entendido de vuestro negocio y os plantea <strong>dos vías de colaboración</strong>: un equipo de cierre de Closer Search, dirigido y coordinado por nosotros, o la dirección comercial integral del área, con vuestro equipo y el nuestro trabajando bajo un mismo procedimiento.</p>
+  <div class="hero-ctas">
+    <a class="btn-primary" href="#propuesta">Ver las dos vías</a>
+    <a class="btn-secondary" href="#candidatos">Ver los candidatos</a>
+  </div>
+  <div class="hero-stats">
+    <div><span class="n">+300</span><span class="l">universidades con convenio en vuestra red</span></div>
+    <div><span class="n">2</span><span class="l">sedes, Lima y Bogotá, y demanda de toda Latinoamérica</span></div>
+    <div><span class="n">2</span><span class="l">vías de colaboración, con un mismo método</span></div>
+    <div><span class="n">+150</span><span class="l">perfiles comerciales ya evaluados en nuestra base</span></div>
+  </div>
+  <div class="promise">"Que cada familia y cada alumno que pide información tenga a alguien que le ayude a decidir, con un método común, una sola dirección y un único informe para GSG."</div>
+  <div class="hero-meta"><span><strong>Para</strong> Fernando Matute y el comité de dirección de GSG Education</span><span class="dot">·</span><span>Preparado por David Martínez-Bayer</span><span class="dot">·</span><span>Base: vuestra web y la videollamada del 27/10/2026</span><span class="dot">·</span><span>Confidencial · v2 · 29/10/2026</span></div>
+</div>
+
+<section id="decision">
+  <div class="section-tag">La decisión en un minuto</div>
+  <h2>Lo que os proponemos y lo que tiene que decidir el comité</h2>
+  <div class="dec-grid">
+    <div class="dec"><span class="via-n">VÍA 1</span><h4>Equipo de cierre de Closer Search</h4><p>Aportamos asesores de admisiones de nuestra base y asumimos su dirección y coordinación. Vuestro equipo sigue como está.</p><p class="dec-m">Solo variable por resultado, con la dirección de nuestros asesores incluida · arranque inmediato</p></div>
+    <div class="dec dec-2"><span class="via-n">VÍA 2</span><h4>Dirección comercial integral</h4><p>Evaluamos y dirigimos toda el área: vuestra red interna y nuestra red externa, con un mismo procedimiento y un único informe.</p><p class="dec-m">Fijo mensual por dirigir vuestro equipo + variable por resultado de nuestros asesores · empieza por la evaluación del equipo</p></div>
+  </div>
+  <h3>Tres decisiones para el comité</h3>
+  <div class="phase"><div class="num active">1</div><div class="phase-body"><h4>Qué vía queréis explorar</h4><p>Vía 1, vía 2, o empezar por la vía 1 y pasar a la vía 2 tras el piloto.</p></div></div>
+  <div class="phase"><div class="num active">2</div><div class="phase-body"><h4>Qué frentes entran en el piloto</h4><p>Admission Academy, Direct Admission, paso del curso a la asesoría, leads ya captados o países sin oficina.</p></div></div>
+  <div class="phase"><div class="num active">3</div><div class="phase-body"><h4>Si avanzamos al diagnóstico</h4><p>Con vuestras respuestas al cuestionario, cerramos importes, indicadores y calendario en la llamada de diagnóstico.</p></div></div>
+</section>
+
+<div class="seal-divider"><span class="line"></span><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="line right"></span></div>
+
+<section id="entendido">
+  <div class="section-tag">01 · Diagnóstico</div>
+  <h2>Lo que hemos entendido de la videollamada</h2>
+  <p>Recogemos los puntos clave de la conversación para que el comité pueda confirmarlos o corregirlos. Si alguno no es exacto, lo ajustamos antes de avanzar.</p>
+  <div class="phase"><div class="num active">1</div><div class="phase-body"><h4>Un negocio con tres líneas</h4><p>Preparación de exámenes, consultoría y gestión del proceso de postulación. GSG actúa además como agente de reclutamiento para universidades internacionales con las que tiene convenio.</p></div></div>
+  <div class="phase"><div class="num active">2</div><div class="phase-body"><h4>Un ingreso recurrente que sostiene la caja</h4><p>Los convenios con universidades, y también con colegios locales, son una fuente de ingresos constante y una parte importante del flujo de caja.</p></div></div>
+  <div class="phase"><div class="num active">3</div><div class="phase-body"><h4>Un equipo cercano a las familias</h4><p>La asesoría y el reclutamiento se llevan desde dentro, con counselors que trabajan muy de cerca con padres y familias. Hay funciones comerciales y de supervisión en Lima y presencia en Bogotá.</p></div></div>
+  <div class="phase"><div class="num active">4</div><div class="phase-body"><h4>Un área comercial en plena reforma</h4><p>GSG está redefiniendo procesos, segmentación y estructura del área. Los retos que nos trasladaste son la rotación de comerciales, la necesidad de supervisar de cerca y de microgestionar, y la fiabilidad del resultado. La dirección busca una estructura que no dependa de controlar a cada persona.</p></div></div>
+  <div class="phase"><div class="num active">5</div><div class="phase-body"><h4>Leads orgánicos que se atienden por WhatsApp</h4><p>Los leads llegan sobre todo de forma orgánica por la web, se filtran y se atienden también por WhatsApp.</p></div></div>
+  <div class="callout"><strong>Vuestra pregunta:</strong> si Closer Search es un headhunter o un servicio de externalización comercial complementaria, y cómo se remunera. Os respondimos que somos un equipo de cierre externo, complementario o sustitutivo según el caso, con una parte variable ligada al resultado de nuestros asesores, que incluye su dirección, y un fijo mensual solo cuando dirigimos también a vuestro equipo con sueldo fijo. Nos pediste la propuesta por escrito para que el comité valore si hay oportunidad: es este informe.</div>
+</section>
+
+<div class="seal-divider"><span class="line"></span><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="line right"></span></div>
+
+<section id="negocio">
+  <div class="section-tag">02 · Diagnóstico</div>
+  <h2>Vuestro negocio y vuestros programas</h2>
+  <p>GSG Education prepara a estudiantes latinoamericanos para los exámenes de admisión (TOEFL, IELTS, SAT, GMAT y GRE) y los acompaña en la postulación a universidades de Estados Unidos, Reino Unido, Europa y Canadá. Estos son los productos y precios publicados en vuestra web:</p>
+  <table>
+    <thead><tr><th>Producto</th><th>Línea</th><th>Precio publicado</th></tr></thead>
+    <tbody>
+      <tr><td class="label wrap">Direct Admission<span class="subnote">Postulación a universidades sin convenio</span></td><td>Asesoría</td><td class="n">1.500 USD</td></tr>
+      <tr><td class="label wrap">Admission Academy<span class="subnote">De 9.º a 11.º grado: Explorer, Advance y Strategic</span></td><td>Asesoría</td><td class="n">Bajo consulta</td></tr>
+      <tr><td class="label wrap">Partner Admission (AAP)<span class="subnote">Universidades socias, ingreso garantizado en una de tres</span></td><td>Convenio</td><td class="n">Gratuito para el alumno</td></tr>
+      <tr><td class="label wrap">SAT · curso online</td><td>Exámenes</td><td class="n">920 USD</td></tr>
+      <tr><td class="label wrap">GMAT · curso online</td><td>Exámenes</td><td class="n">860 USD</td></tr>
+      <tr><td class="label wrap">TOEFL · 4 meses<span class="subnote">Con garantía de 100 puntos</span></td><td>Exámenes</td><td class="n">650 USD</td></tr>
+      <tr><td class="label wrap">Clases, guía y traducciones</td><td>Otros</td><td class="n">14–150 USD</td></tr>
+    </tbody>
+  </table>
+  <p class="subnote" style="margin-top:14px;">Cada curso incluye una hora de asesoría de admisión y talleres de aplicación: un puente natural del curso de examen hacia la asesoría completa o hacia el programa con universidades socias.</p>
+
+  <h3>A quién se dirige GSG</h3>
+  <details class="acc" open><summary>Familia de escolar de 9.º a 11.º grado</summary><div class="acc-body"><p><strong>Decide:</strong> el padre o la madre. <strong>Productos:</strong> Admission Academy, SAT y Direct Admission.</p><p>Le mueven llegar a tiempo, un perfil competitivo y las opciones de beca. Le frenan el coste total de la carrera y la duda sobre el nivel de su hijo.</p></div></details>
+  <details class="acc"><summary>Bachiller que quiere estudiar fuera con beca</summary><div class="acc-body"><p><strong>Decide:</strong> el alumno con su familia. <strong>Productos:</strong> AAP, TOEFL y traslados.</p><p>Le mueven salir del país con beca y un proceso sencillo. Le frenan el presupuesto y el miedo al rechazo.</p></div></details>
+  <details class="acc"><summary>Profesional de 25 a 35 años que va a por un máster o MBA</summary><div class="acc-body"><p><strong>Decide:</strong> el propio alumno. <strong>Productos:</strong> GMAT, GRE, TOEFL o IELTS y Direct Admission.</p><p>Le mueve el salto profesional y salarial. Le frenan el tiempo de preparación y el coste de oportunidad.</p></div></details>
+
+  <h3>Lo que tenéis y vale mucho</h3>
+  <ul class="checklist conds">
+    <li><span class="box"></span><span>Una oferta integrada, con examen, asesoría y convenio en una sola casa, frente al tutor independiente o la agencia de visados.</span></li>
+    <li><span class="box"></span><span>Autoridad: membresía en International ACAC, vínculo con UCAS, presencia en prensa de Perú y Colombia y alianza con iTEP.</span></li>
+    <li><span class="box"></span><span>Garantías concretas: puntuación objetivo en TOEFL e ingreso garantizado en el programa AAP.</span></li>
+    <li><span class="box"></span><span>Herramientas de captación propias: diagnóstico gratuito, test vocacional, buscador de universidades y eventos con universidades.</span></li>
+    <li><span class="box"></span><span>Cartas de aceptación reales de universidades como NYU, Georgia Tech, Babson, Penn State o UBC.</span></li>
+  </ul>
+</section>
+
+<div class="seal-divider"><span class="line"></span><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="line right"></span></div>
+
+<section id="recorrido">
+  <div class="section-tag">03 · Diagnóstico</div>
+  <h2>Observaciones del recorrido digital</h2>
+  <p>Antes de la reunión revisamos el recorrido de compra completo, como lo haría una familia. Compartimos lo que conviene corregir, ordenado por prioridad, porque afecta directamente a la conversión.</p>
+  <div class="phase"><div class="num active">1</div><div class="phase-body"><h4>Texto ajeno en la tienda online · inmediata</h4><p>La portada de tienda.gsgeducation.com muestra un bloque de texto en portugués sobre casinos online. Aparece justo donde la familia paga y resta confianza. Suele indicar una inserción de contenido no autorizado en WordPress y puede afectar al posicionamiento.</p></div></div>
+  <div class="phase"><div class="num active">2</div><div class="phase-body"><h4>Marca anterior en el pago · inmediata</h4><p>La tienda se presenta en buscadores y redes como «Grad School Guru». En el momento del pago la familia ve una marca distinta de la que conoce.</p></div></div>
+  <div class="phase"><div class="num">3</div><div class="phase-body"><h4>Calendario desactualizado · alta</h4><p>El calendario de inicios muestra fechas de febrero. En plena temporada de admisión transmite que la información no está al día.</p></div></div>
+  <div class="phase"><div class="num">4</div><div class="phase-body"><h4>Un formulario para todo · alta</h4><p>El mismo formulario sirve para todos los productos y no recoge país, edad, año de ingreso ni quién decide. Con tres preguntas más, el equipo prioriza mejor desde el primer contacto.</p></div></div>
+  <div class="phase"><div class="num">5</div><div class="phase-body"><h4>WhatsApp, el canal donde se cierra · oportunidad</h4><p>La web ya ofrece contacto directo por WhatsApp, además de Instagram y Messenger. En Perú y Colombia es el canal donde se decide: con un primer contacto el mismo día y seguimiento hasta la decisión, cada conversación que entra por ahí puede convertirse en una inscripción.</p></div></div>
+</section>
+
+<div class="seal-divider"><span class="line"></span><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="line right"></span></div>
+
+<section id="quienes">
+  <div class="section-tag">04 · Closer Search</div>
+  <h2>Quiénes somos</h2>
+  <p><strong>Closer Search</strong> (Closer Search Consulting S.L., Barcelona) selecciona, forma y dirige equipos de cierre en remoto para empresas de formación, programas educativos y servicios digitales de alto valor. No somos un headhunter que presenta candidatos y se retira, ni una agencia que vende leads. Nos responsabilizamos del resultado comercial: ponemos a las personas, las formamos en el producto del cliente, las dirigimos día a día y respondemos por ellas.</p>
+  <div class="card" style="margin-top:18px;"><h4>Qué hacemos</h4><ul>
+    <li>Seleccionamos asesores y closers de nuestra base de talento verificado.</li>
+    <li>Construimos el material comercial de cada proyecto: informe del cliente, vocabulario del sector y guía de llamada.</li>
+    <li>Formamos al equipo en la oferta y en el método de venta de Closer Search.</li>
+    <li>Dirigimos al equipo, revisamos llamadas y reportamos al cliente.</li>
+    <li>Sustituimos, reforzamos o ampliamos el equipo cuando hace falta.</li>
+  </ul></div>
+  <div class="card" style="margin-top:14px;"><h4>Cómo vendemos</h4><p>Nuestro método parte del diagnóstico: entender primero la situación de la familia o del alumno y recomendar solo cuando el programa encaja. Si no encaja, se dice. En educación esto es imprescindible: no se promete una admisión ni una beca, y la confianza de la familia vale más que una venta. El análisis de cada llamada y de cada objeción vuelve al equipo de marketing del cliente para mejorar la cualificación de los leads y el embudo.</p></div>
+
+  <h3 id="especialidad">Nuestra especialidad: asesores de admisiones para educación online</h3>
+  <p>Tenemos una línea específica para academias, escuelas y centros de formación: ponemos asesores de admisiones formados en cierre al frente de las matrículas. Parte de una idea que encaja con GSG: los leads no necesitan más información, necesitan a alguien que les ayude a decidir. La mayor pérdida se produce en el primer contacto, cuando el interesado pide precio por WhatsApp y nadie le acompaña en la decisión. Y las bajas y las malas reseñas llegan cuando se matricula a quien no encaja.</p>
+  <div class="dodont">
+    <div class="box do"><h4>Cómo trabajan nuestros asesores</h4><ul>
+      <li>Primer contacto el mismo día y seguimiento por WhatsApp hasta la decisión.</li>
+      <li>Formados en el programa del cliente antes de su primera llamada.</li>
+      <li>Asesoran sobre salidas, horarios, titulación y financiación.</li>
+      <li>Supervisados cada semana, con revisión de llamadas.</li>
+      <li>Informan de qué leads se matriculan para afinar el marketing.</li>
+    </ul></div>
+    <div class="box dont"><h4>Nuestras líneas rojas</h4><ul>
+      <li>Nunca matriculamos a quien no encaja.</li>
+      <li>No garantizamos admisiones, becas ni salidas profesionales.</li>
+      <li>No inventamos urgencias ni «últimas plazas».</li>
+    </ul></div>
+  </div>
+  <p class="subnote" style="margin-top:12px;">Más información: www.closersearch.com/asesores-admisiones-elearning</p>
+
+  <h3>Quién dirige el proyecto</h3>
+  <p><strong>David Martínez-Bayer</strong>, CEO y Fundador de Closer Search, suma más de 30 años de experiencia comercial en venta B2B y B2C. Ha trabajado con grandes corporaciones y multinacionales de sectores como automoción, aeronáutica, construcción y consultoría tecnológica, y ha desarrollado canales de partners y equipos comerciales. Hoy aplica esa experiencia al sector formativo y dirige personalmente cada proyecto de Closer Search.</p>
+</section>
+
+<div class="seal-divider"><span class="line"></span><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="line right"></span></div>
+
+<section id="experiencia">
+  <div class="section-tag">05 · Closer Search</div>
+  <h2>Experiencia en el sector formativo</h2>
+  <p>El sector formativo tiene un vocabulario, unos plazos y unas reglas propias: titulaciones, acreditaciones, bonificaciones, becas, convocatorias y decisiones familiares. Estos son cuatro proyectos formativos en los que trabajamos y lo que Closer Search ha construido en cada uno.</p>
+  <details class="acc" open><summary>First Step Cooperation · empleo en cooperación internacional<span class="sum-meta">847 € · 4 meses</span></summary><div class="acc-body">
+    <p><strong>Qué hacen.</strong> Programa de acompañamiento para profesionales que quieren conseguir su primer empleo en cooperación internacional y en el sector humanitario. Venta por embudo de vídeo en redes, webinar, guías gratuitas y bot de cualificación en Instagram y WhatsApp, con sesión estratégica antes del cierre.</p>
+    <p><strong>Lo que hemos construido:</strong></p>
+    <ul><li>Informe operativo completo del programa: oferta, avatar, ángulos de comunicación, competencia, objeciones y recursos.</li><li>Guía de llamada interactiva que une setting y cierre en una sola conversación.</li><li>Sistema de recuperación de leads que retoma cada conversación en el punto exacto en que se quedó el bot.</li><li>Equipo de closers en turnos de mañana y tarde, con reparto de leads y seguimiento en el CRM del cliente.</li></ul>
+  </div></details>
+  <details class="acc"><summary>AEDIA · formación en inteligencia artificial<span class="sum-meta">90 € – 3.900 €</span></summary><div class="acc-body">
+    <p><strong>Qué hacen.</strong> Asociación Española para la Difusión de la Inteligencia Artificial: un catálogo de 17 cursos, bootcamps y másteres para profesionales y empresas, con formación bonificada. Cursos de 90 € a 840 €, en su mayoría para empresas, y programas de 2.200 € a 3.900 € para particulares, con venta B2B y B2C.</p>
+    <p><strong>Lo que hemos construido:</strong></p>
+    <ul><li>Cuestionario de colaboración e informe ejecutivo del negocio antes de firmar.</li><li>Portal interno para el equipo: catálogo y temarios, vocabulario de IA, playbook y guion, y plan de cierre.</li><li>Guía de llamada que diagnostica qué curso encaja con cada lead y acompaña la bonificación y el pago.</li><li>Dos closers dedicadas en turnos de mañana y tarde, con onboarding con el equipo de AEDIA.</li></ul>
+  </div></details>
+  <details class="acc"><summary>ESCIDE · formación universitaria online en ciencias del deporte<span class="sum-meta">4.000 € – 16.000 €</span></summary><div class="acc-body">
+    <p><strong>Qué hacen.</strong> Escuela Superior de Ciencias del Deporte: Grado online en Ciencias de la Actividad Física y del Deporte (3 años, 180 ECTS), programa Top Up y másteres de especialización, para España y Latinoamérica. Grado de 12.500 € a 16.000 € según beca y másteres en torno a 4.000 €.</p>
+    <p><strong>Lo que hemos construido:</strong></p>
+    <ul><li>Radiografía del negocio con sus 13 programas, precios, embudo de admisión y puntos de mejora.</li><li>Cuestionario de colaboración de 18 bloques, con preguntas específicas para Latinoamérica y fines de semana.</li><li>Informe ejecutivo con la propuesta de equipo: un closer para Latinoamérica, atención en fines de semana y un closer dedicado a los másteres.</li></ul>
+  </div></details>
+  <details class="acc"><summary>ESEM Training · Escuela de Emociones · coaching<span class="sum-meta">2.800 €</span></summary><div class="acc-body">
+    <p><strong>Qué hacen.</strong> Escuela de coaching en Madrid y online: Certificación en Coaching Integrativo de 450 horas y otros programas de desarrollo personal, con grupos de hasta 30 alumnos por edición y admisión mediante videollamada obligatoria. Recorrido base de 2.800 €, con pago fraccionado.</p>
+    <p><strong>Lo que hemos construido:</strong></p>
+    <ul><li>Análisis del negocio y de su embudo de admisión.</li><li>Cuestionario de colaboración de 17 bloques con 16 fichas de programa para confirmar con su equipo.</li><li>Reunión de diagnóstico e informe ejecutivo en preparación.</li></ul>
+  </div></details>
+  <p style="margin-top:16px;">Además, trabajamos con programas online de salud, servicios jurídicos y empresas de inteligencia artificial. El patrón es siempre el mismo: entender el producto en profundidad, construir el material del equipo y dirigir el cierre con informes al cliente.</p>
+</section>
+
+<div class="seal-divider"><span class="line"></span><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="line right"></span></div>
+
+<section id="propuesta">
+  <div class="section-tag">06 · Propuesta</div>
+  <h2>Propuesta de colaboración: dos vías</h2>
+  <p>GSG ya tiene un equipo comercial y de counselors que conoce el producto y a las familias, y está reformando su área comercial. Por eso planteamos dos vías, pensadas para dos momentos y dos niveles de ambición distintos. Las dos parten del mismo principio: Closer Search no se limita a poner personas, sino que se responsabiliza de cómo trabajan y de lo que consiguen.</p>
+
+  <div class="paybox via">
+    <div class="via-hd"><span class="via-n">VÍA 1</span><span class="pill">Equipo de cierre de Closer Search</span></div>
+    <h3 class="via-t">Aportamos, dirigimos y coordinamos a nuestros asesores</h3>
+    <p>GSG mantiene su equipo y su organización tal como están. Closer Search incorpora asesores de admisiones de su base de talento verificado y asume por completo su dirección y coordinación, como una unidad de cierre externa que trabaja para GSG.</p>
+    <div class="via-cols">
+      <div><h4>Qué asume Closer Search</h4><ul>
+        <li>Selección de los asesores según los frentes que GSG decida.</li>
+        <li>Formación en el producto de GSG, con sesiones con sus counselors.</li>
+        <li>Informe del producto, vocabulario del sector y guía de llamada interactiva.</li>
+        <li>Dirección diaria, revisión de llamadas, indicadores y sustitución de cualquier asesor.</li>
+        <li>Coordinación con el equipo de GSG para el traspaso de cada familia al counselor.</li>
+      </ul></div>
+      <div><h4>Qué gana GSG</h4><ul>
+        <li>Capacidad comercial adicional desde el primer mes, sin contratar ni supervisar a nadie.</li>
+        <li>Cobertura de los frentes que hoy no se atienden: familias de alto valor, leads ya captados, tardes, fines de semana y países sin oficina.</li>
+        <li>Sin coste fijo: GSG solo paga cuando nuestros asesores cierran, y su dirección va incluida.</li>
+      </ul></div>
+    </div>
+    <p class="via-model"><strong>Modelo:</strong> solo retribución variable sobre el resultado de los asesores, entre el 15 % y el 18 %. Su selección, su formación y su dirección van incluidas: no hay coste fijo.</p>
+    <p class="via-when"><strong>Cuándo elegirla:</strong> si GSG quiere reforzar su capacidad de cierre de inmediato y probar el método antes de tocar su organización interna.</p>
+  </div>
+
+  <div class="paybox via via-2">
+    <div class="via-hd"><span class="via-n">VÍA 2</span><span class="pill pill-a">Dirección comercial integral</span></div>
+    <h3 class="via-t">Asumimos todo el procedimiento comercial, con vuestro equipo incluido</h3>
+    <p>Closer Search asume la dirección de toda el área comercial de GSG. Dos redes conviven bajo un mismo procedimiento: la red interna de GSG y la red externa de Closer Search, con el mismo método, las mismas herramientas, los mismos indicadores y un único informe para la dirección.</p>
+    <div class="via-cols">
+      <div><h4>Qué asume Closer Search</h4><ul>
+        <li>Evaluación de cada persona del equipo actual con nuestros procedimientos de selección: entrevista, escucha de llamadas, role play y análisis de cifras.</li>
+        <li>Diseño del procedimiento comercial común: atención del lead, cualificación, llamada, seguimiento y traspaso al counselor.</li>
+        <li>Reparto de leads y frentes entre la red interna y la externa según el perfil y el rendimiento de cada persona.</li>
+        <li>Dirección diaria de ambas redes, formación continua, revisión de llamadas e indicadores por persona y por canal.</li>
+        <li>Incorporación de asesores de nuestra base para reforzar, cubrir bajas o abrir frentes.</li>
+      </ul></div>
+      <div><h4>Qué gana GSG</h4><ul>
+        <li>Una dirección comercial con método propio, sin contratar un director ni asumir su riesgo.</li>
+        <li>Un equipo interno evaluado, ordenado y medido con los mismos criterios que el externo.</li>
+        <li>Fin de la microgestión y de la dependencia de cada persona: el procedimiento sostiene el resultado.</li>
+        <li>Una sola visión de toda el área: un responsable, un método y un informe.</li>
+      </ul></div>
+    </div>
+    <p class="via-model"><strong>Modelo:</strong> coste fijo mensual por la dirección de vuestro equipo interno con sueldo fijo, y retribución variable sobre el resultado de los asesores que aporta Closer Search, cuya dirección va incluida.</p>
+    <p class="via-when"><strong>Cuándo elegirla:</strong> si GSG quiere aprovechar la reforma comercial para profesionalizar el área completa y dejar de depender de la supervisión directa.</p>
+  </div>
+
+  <h3 id="redes">Cómo conviven las dos redes en la vía 2</h3>
+  <div class="phase"><div class="num active">1</div><div class="phase-body"><h4>Red interna · GSG</h4><p>Comerciales y counselors de Lima y Bogotá, evaluados y dirigidos por Closer Search.</p></div></div>
+  <div class="phase"><div class="num active">2</div><div class="phase-body"><h4>Red externa · Closer Search</h4><p>Asesores de admisiones de nuestra base de talento, en remoto y en los frentes que se asignen.</p></div></div>
+  <div class="phase"><div class="num active">3</div><div class="phase-body"><h4>Un mismo procedimiento</h4><p>Mismo guion, mismas herramientas, mismo CRM, mismos indicadores, mismas reglas de reparto de leads y mismo traspaso al counselor.</p></div></div>
+  <div class="phase"><div class="num active">4</div><div class="phase-body"><h4>Un único informe</h4><p>La dirección de GSG ve en un solo informe la actividad, la conversión y las objeciones de toda el área, persona a persona.</p></div></div>
+  <div class="callout">Las dos redes no compiten entre sí: cada lead tiene un responsable claro según las reglas de reparto, y la evaluación continua decide con datos qué frentes lleva cada una. Así GSG gana capacidad sin perder control y puede ajustar el peso de cada red en cada temporada.</div>
+  <h3 id="gobernanza">Quién decide qué en la vía 2</h3>
+  <p>La vía 2 no quita a GSG el control de su equipo. Ordena cómo se trabaja y deja claro quién decide cada cosa:</p>
+  <table>
+    <thead><tr><th>Ámbito</th><th>Decide</th></tr></thead>
+    <tbody>
+      <tr><td class="label wrap">Contratación, salidas, salarios e incentivos del equipo interno</td><td>GSG</td></tr>
+      <tr><td class="label wrap">Organización y jerarquía interna</td><td>GSG; la jefatura comercial de GSG mantiene su papel con su equipo</td></tr>
+      <tr><td class="label wrap">Procedimiento comercial, guion, herramientas e indicadores</td><td>Closer Search propone; GSG aprueba</td></tr>
+      <tr><td class="label wrap">Reparto de leads y frentes entre las dos redes</td><td>Closer Search, con reglas aprobadas por GSG</td></tr>
+      <tr><td class="label wrap">Selección, sustitución y dirección de la red externa</td><td>Closer Search</td></tr>
+      <tr><td class="label wrap">Precios, descuentos, becas y excepciones</td><td>GSG</td></tr>
+    </tbody>
+  </table>
+  <div class="callout"><strong>Coordinación diaria pese a la diferencia horaria:</strong> Barcelona va 6 horas por delante de Lima y Bogotá. Las reuniones de seguimiento se fijan en la mañana de Lima, que es la tarde en España, y los asesores de la red externa trabajan en vuestro horario. La dirección de GSG y la de Closer Search revisan resultados en una reunión semanal, y las decisiones sobre las personas de vuestro equipo se toman siempre con vosotros.</div>
+
+
+  <h3>Las dos vías, frente a frente</h3>
+  <table>
+    <thead><tr><th></th><th>Vía 1 · Equipo de cierre</th><th>Vía 2 · Dirección integral</th></tr></thead>
+    <tbody>
+      <tr><td class="label wrap">Equipo interno de GSG</td><td>Sigue como está</td><td>Evaluado y dirigido por Closer Search</td></tr>
+      <tr><td class="label wrap">Asesores de Closer Search</td><td>Sí, dirigidos y coordinados por Closer Search</td><td>Sí, para reforzar o abrir frentes</td></tr>
+      <tr><td class="label wrap">Procedimiento</td><td>El de Closer Search, para su red</td><td>Uno común para toda el área</td></tr>
+      <tr><td class="label wrap">Informe</td><td>De la red de Closer Search</td><td>Único, de toda el área</td></tr>
+      <tr><td class="label wrap">Modelo</td><td>Solo variable por resultado, con la dirección incluida</td><td>Fijo por dirigir vuestro equipo + variable por nuestros asesores</td></tr>
+      <tr><td class="label wrap">Arranque</td><td>Inmediato</td><td>Empieza por la evaluación del equipo</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:16px;">Las dos vías son compatibles en el tiempo: GSG puede empezar por la vía 1 durante esta temporada y pasar a la vía 2 cuando haya comprobado el método, o arrancar directamente con la vía 2 si quiere aprovechar la reforma del área.</p>
+</section>
+
+<div class="seal-divider"><span class="line"></span><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="line right"></span></div>
+
+<section id="modelo">
+  <div class="section-tag">07 · Propuesta</div>
+  <h2>Modelo económico</h2>
+  <p>El modelo distingue a quién dirigimos. La dirección de los asesores que aporta Closer Search va siempre incluida en su retribución variable. El coste fijo mensual solo aparece cuando dirigimos también a vuestro equipo interno con sueldo fijo, en la vía 2. Los importes se acuerdan en la llamada de diagnóstico, una vez conocidos el tamaño del equipo, el alcance y el volumen de leads.</p>
+  <div class="card" style="margin-top:18px;"><div class="pill">Fijo · solo vía 2</div><h4>Coste fijo mensual por dirigir vuestro equipo</h4><p>Cubre la evaluación inicial y la dirección diaria de vuestros asesores con sueldo fijo bajo el procedimiento común: procesos, herramientas, formación continua, revisión de llamadas e informe periódico. Se fija según el número de personas y el alcance, y se revisa en cada periodo.</p><p style="margin-top:8px;"><strong>En la vía 1 no hay coste fijo.</strong></p></div>
+  <div class="card" style="margin-top:14px;"><div class="pill">Variable · vías 1 y 2</div><h4>Entre el 15 % y el 18 % por inscripción</h4><p>Un único porcentaje para todos los productos, sobre la base imponible de cada inscripción cerrada por nuestros asesores. Incluye su selección, su formación y su dirección, y solo se genera cuando hay inscripción.</p></div>
+  <ul class="checklist conds">
+    <li><span class="box"></span><span><strong>Selección y formación:</strong> sin coste aparte; la selección, la formación y los materiales de los asesores están incluidos.</span></li>
+    <li><span class="box"></span><span><strong>Variable:</strong> entre el 15 % y el 18 % de la base imponible de cada inscripción cerrada, igual para cursos de examen, Direct Admission, Admission Academy y paquetes. El porcentaje exacto dentro de esa horquilla se fija en la llamada de diagnóstico según el volumen.</span></li>
+    <li><span class="box"></span><span><strong>Programa AAP:</strong> como el alumno no paga, el mismo 15–18 % se aplica sobre lo que GSG percibe de la universidad por cada matrícula confirmada.</span></li>
+    <li><span class="box"></span><span><strong>Devengo:</strong> al cerrarse la inscripción, con independencia de que la familia pague al contado, a plazos o con financiación.</span></li>
+    <li><span class="box"></span><span><strong>Liquidación:</strong> mensual, con el informe de las inscripciones cerradas y conciliado con los registros de GSG.</span></li>
+  </ul>
+
+
+  <h3 id="retorno">Cómo calcular el retorno</h3>
+  <p>En la vía 1 no hay coste fijo, así que la colaboración es rentable desde la primera inscripción: de cada una, GSG conserva entre el 82 % y el 85 %. En la vía 2, el coste fijo de dirigir vuestro equipo se cubre con la mejora que consiga ese equipo. La cuenta es sencilla:</p>
+  <div class="paybox">
+    <h3>Punto de equilibrio mensual</h3>
+    <p class="formula">Vía 2 · inscripciones adicionales que debe sumar vuestro equipo al mes = coste fijo mensual de dirección ÷ ingreso medio por inscripción</p>
+    <div class="pay-grid">
+      <div class="pay-card"><div class="plan">Ingreso medio por inscripción</div><div class="amount">Vuestros datos</div><p class="subnote" style="margin:0;">Por ejemplo, 1.500 USD en Direct Admission y de 650 a 920 USD en los cursos de examen, o lo que percibís de la universidad en AAP.</p></div>
+      <div class="pay-card"><div class="plan">Variable por inscripción</div><div class="amount">15 % – 18 %</div><p class="subnote" style="margin:0;">De la base imponible de cada inscripción, igual para todos los productos.</p></div>
+      <div class="pay-card"><div class="plan">Coste fijo de dirección</div><div class="amount"><span class="pend" style="margin:0">Tras el diagnóstico</span></div><p class="subnote" style="margin:0;">Solo en la vía 2. Se presenta en la propuesta económica, según el número de personas de vuestro equipo y el alcance.</p></div>
+    </div>
+    <p style="margin:16px 0 0;">Con los importes acordados, os entregamos esta cuenta resuelta para cada producto y un escenario mensual con vuestro volumen de leads, para que el comité vea cuántas inscripciones adicionales hacen falta para que cada vía sea rentable.</p>
+  </div>
+
+
+  <h3 id="frente-fijo">Closer Search frente a un equipo con sueldo fijo</h3>
+  <p>La alternativa a nuestros asesores es contratar asesores propios con sueldo fijo. Esta comparación permite al comité valorar qué le conviene en cada caso:</p>
+  <table>
+    <thead><tr><th></th><th>Equipo propio con sueldo fijo</th><th>Asesores de Closer Search</th></tr></thead>
+    <tbody>
+      <tr><td class="label wrap">Coste si no hay ventas</td><td>Sueldos, cargas sociales y supervisión: se paga igual</td><td>Cero: sin ventas no hay variable, y nuestros asesores no tienen coste fijo</td></tr>
+      <tr><td class="label wrap">Coste por venta</td><td>Sueldo e incentivos repartidos entre las ventas del mes</td><td>15–18 % de cada inscripción</td></tr>
+      <tr><td class="label wrap">Selección</td><td>Anuncios, entrevistas y tiempo de la dirección</td><td>Incluida, desde una base de más de 150 perfiles evaluados</td></tr>
+      <tr><td class="label wrap">Formación</td><td>A cargo de GSG y de sus counselors</td><td>Incluida, con informe del producto, vocabulario y guía de llamada</td></tr>
+      <tr><td class="label wrap">Rotación</td><td>Cada salida obliga a repetir selección y formación</td><td>Sustitución sin coste y sin cortar la cobertura</td></tr>
+      <tr><td class="label wrap">Supervisión</td><td>Dirección de GSG o un director contratado</td><td>Dirección diaria a cargo de Closer Search</td></tr>
+      <tr><td class="label wrap">Temporada alta y baja</td><td>El coste no cambia aunque cambie la demanda</td><td>El equipo se refuerza o se reduce según la temporada</td></tr>
+      <tr><td class="label wrap">Riesgo laboral</td><td>Contratos, indemnizaciones y bajas</td><td>Servicio mercantil, sin relación laboral con GSG</td></tr>
+    </tbody>
+  </table>
+  <h3>Hasta qué nivel de ventas compensa Closer Search</h3>
+  <p>Con el variable, GSG paga entre 150 y 180 USD por cada 1.000 USD inscritos. Un asesor con sueldo fijo solo sale más barato cuando sus ventas mensuales superan este nivel de equilibrio: coste mensual total del asesor ÷ 0,15 (o ÷ 0,18).</p>
+  <table>
+    <thead><tr><th>Coste mensual de un asesor fijo</th><th>Equilibrio al 15 %</th><th>Equilibrio al 18 %</th><th>Inscripciones de Direct Admission</th></tr></thead>
+    <tbody>
+      <tr><td class="label">500 USD</td><td class="n">3.333 USD</td><td class="n">2.778 USD</td><td class="n">2,2 – 1,9</td></tr>
+      <tr><td class="label">1.000 USD</td><td class="n">6.667 USD</td><td class="n">5.556 USD</td><td class="n">4,4 – 3,7</td></tr>
+      <tr><td class="label">1.500 USD</td><td class="n">10.000 USD</td><td class="n">8.333 USD</td><td class="n">6,7 – 5,6</td></tr>
+      <tr><td class="label">2.000 USD</td><td class="n">13.333 USD</td><td class="n">11.111 USD</td><td class="n">8,9 – 7,4</td></tr>
+      <tr><td class="label">2.500 USD</td><td class="n">16.667 USD</td><td class="n">13.889 USD</td><td class="n">11,1 – 9,3</td></tr>
+      <tr><td class="label">3.000 USD</td><td class="n">20.000 USD</td><td class="n">16.667 USD</td><td class="n">13,3 – 11,1</td></tr>
+    </tbody>
+  </table>
+  <div class="callout"><strong>Cómo leer la tabla:</strong> el coste mensual del asesor fijo incluye sueldo, cargas e incentivos; la primera columna va de 500 en 500 USD para que el comité busque su cifra real. Por debajo del nivel de equilibrio, nuestros asesores son más baratos. Por encima, el variable cuesta algo más que un sueldo, pero GSG sigue sin asumir selección, formación, rotación, supervisión ni riesgo laboral, costes que no aparecen en esta cuenta. La última columna traduce el equilibrio a inscripciones de Direct Admission (1.500 USD) por asesor y mes.</div>
+
+  <h3 id="rentable">Por qué el coste fijo de dirigir vuestro equipo es rentable para GSG (vía 2)</h3>
+  <p>La alternativa a que Closer Search dirija a vuestro equipo con sueldo fijo es incorporar un director comercial propio. Comparado con esa opción, el coste fijo mensual tiene ventajas concretas en el caso de GSG:</p>
+  <div class="phase"><div class="num active">1</div><div class="phase-body"><h4>Sin proceso de contratación ni periodo de prueba</h4><p>Encontrar y adaptar un director comercial con experiencia en educación lleva meses, y GSG está en plena temporada de admisiones. La dirección empieza a funcionar desde el primer mes.</p></div></div>
+  <div class="phase"><div class="num active">2</div><div class="phase-body"><h4>Sin estructura laboral</h4><p>No hay salario, cargas sociales, incentivos ni indemnizaciones. Es un servicio mercantil con un alcance definido, que se ajusta o se termina según los resultados.</p></div></div>
+  <div class="phase"><div class="num active">3</div><div class="phase-body"><h4>Método y herramientas ya construidos</h4><p>El informe del producto, el vocabulario del sector, la guía de llamada, los indicadores y el sistema de evaluación forman parte del servicio. Un director interno tendría que crearlos desde cero.</p></div></div>
+  <div class="phase"><div class="num active">4</div><div class="phase-body"><h4>Menos coste de rotación</h4><p>Cada comercial que se va supone repetir selección y formación y perder los leads que llevaba. Un procedimiento común y una base de talento detrás reducen las salidas y cubren las que se producen.</p></div></div>
+  <div class="phase"><div class="num active">5</div><div class="phase-body"><h4>Experiencia de varios proyectos</h4><p>La dirección aplica lo que funciona en otros proyectos formativos y en más de 30 años de dirección comercial, no la experiencia de una sola empresa.</p></div></div>
+  <div class="phase"><div class="num active">6</div><div class="phase-body"><h4>Coste conocido e intereses alineados</h4><p>Un importe fijo y estable por dirigir vuestro equipo, que la dirección financiera de GSG puede planificar, mientras que nuestros asesores solo generan coste cuando hay inscripciones. Closer Search cobra por resultado en la red que aporta, así que la dirección tiene el mismo objetivo que GSG: que toda el área cierre más y mejor.</p></div></div>
+</section>
+
+<div class="seal-divider"><span class="line"></span><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="line right"></span></div>
+
+<section id="trabajo">
+  <div class="section-tag">08 · El equipo</div>
+  <h2>Cómo trabajamos</h2>
+  <p>El orden importa: primero entendemos el negocio, después evaluamos a las personas y finalmente dirigimos. Así todo el equipo, interno y externo, trabaja sabiendo exactamente qué ofrece GSG, a quién y con qué palabras.</p>
+  <div class="phase"><div class="num active">1</div><div class="phase-body"><h4>Cuestionario y diagnóstico</h4><p>GSG responde un cuestionario sobre catálogo, precios, leads, procesos y equipo. Con eso hacemos una llamada de diagnóstico y comprobamos que el proyecto tiene sentido para ambas partes.</p></div></div>
+  <div class="phase"><div class="num active">2</div><div class="phase-body"><h4>Informe operativo y vocabulario del sector</h4><p>Ordenamos en un solo lugar la información que hoy suele estar dispersa: oferta, perfiles de cliente, argumentos, objeciones, procesos de pago y vocabulario del sector (TOEFL, IELTS, SAT, Common App, UCAS, Early Action, becas, Direct frente a Partner).</p></div></div>
+  <div class="phase"><div class="num active">3</div><div class="phase-body"><h4>Guía de llamada interactiva</h4><p>Una herramienta web que acompaña al asesor durante la llamada, ayuda a diagnosticar qué programa encaja y deja la ficha del lead lista para el CRM.</p></div></div>
+  <div class="phase"><div class="num active">4</div><div class="phase-body"><h4>Evaluación y selección</h4><p>Evaluamos al equipo actual de GSG en la vía 2 y, donde haga falta reforzar, elegimos asesores de nuestra base según sector, tipo de venta, ticket, horario, perfil de lead y experiencia. Más del 60 % del éxito de un equipo comercial se decide en este paso.</p></div></div>
+  <div class="phase"><div class="num active">5</div><div class="phase-body"><h4>Formación e incorporación</h4><p>Formación de todo el equipo en el método y las herramientas comunes. Los asesores de Closer Search reciben además una semana de formación en el producto de GSG, con sesiones con sus counselors.</p></div></div>
+  <div class="phase"><div class="num active">6</div><div class="phase-body"><h4>Dirección y mejora continua</h4><p>Dirección diaria, revisión de llamadas, informes de cada llamada y análisis de los leads no cualificados por segmento, que trasladamos a GSG para mejorar la captación.</p></div></div>
+</section>
+
+<div class="seal-divider"><span class="line"></span><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="line right"></span></div>
+
+<section id="talento">
+  <div class="section-tag">09 · El equipo</div>
+  <h2>Talento verificado y cobertura</h2>
+  <div class="paybox">
+    <h3>Más de 150 perfiles evaluados · El Sello de los 6</h3>
+    <p>Mantenemos una base de setters, closers y asesores ya evaluados con nuestro proceso de selección propio. Cada perfil tiene que superar seis filtros: resultados verificados, capacidad de diagnóstico, manejo de objeciones, cierre, actitud de guía (sin presionar) y encaje con el tipo de programa, el ticket y el calendario de convocatorias del cliente.</p>
+    <p style="margin:0;">Trabajan como profesionales independientes, con contrato mercantil con Closer Search. GSG no asume contratación, cargas laborales ni gestión de personal.</p>
+  </div>
+  <h3>Cobertura geográfica</h3>
+  <ul class="checklist conds">
+    <li><span class="box"></span><span><strong>Latinoamérica:</strong> asesores en horario de Lima y Bogotá (UTC-5), con conocimiento del mercado peruano, colombiano y mexicano, también por la tarde y los fines de semana.</span></li>
+    <li><span class="box"></span><span><strong>España:</strong> equipos en horario europeo para leads de España o para cubrir franjas de mañana.</span></li>
+    <li><span class="box"></span><span><strong>Europa:</strong> cobertura en localizaciones concretas cuando el proyecto lo requiera.</span></li>
+  </ul>
+  <p>La atención es en español. La combinación de husos permite ampliar las horas de atención sin coste fijo adicional.</p>
+  <h3>Perfiles que podemos aportar</h3>
+  <table>
+    <thead><tr><th>Perfil</th><th>Función en GSG</th></tr></thead>
+    <tbody>
+      <tr><td class="label wrap">Asesor de admisiones sénior</td><td>Admission Academy, Direct Admission y paquetes de examen con asesoría. Venta consultiva de alto valor en educación y conversación con padres y alumno a la vez.</td></tr>
+      <tr><td class="label wrap">Asesor de admisiones</td><td>Cursos de examen, paso del curso a la asesoría y recuperación de leads. Agilidad en WhatsApp y cercanía con alumnos de 17 a 30 años.</td></tr>
+      <tr><td class="label wrap">Coordinador de equipo</td><td>Apoyo a la dirección: seguimiento diario, CRM e indicadores. Experiencia liderando equipos de cierre en remoto.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="seal-divider"><span class="line"></span><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="line right"></span></div>
+
+<section id="candidatos">
+  <div class="section-tag">10 · Candidatos</div>
+  <h2>Los candidatos que os proponemos</h2>
+  <p>Hemos revisado nuestra base de talento con los criterios del puesto: experiencia en venta de educación, admisiones o programas formativos, trato con familias y disponibilidad en el horario de Lima y Bogotá. Las cifras son las que declara cada candidato: las comprobamos en la entrevista y en un roleplay con una familia, y después los entrevistáis vosotros antes de que empiecen. Por confidencialidad, solo figura el nombre de pila de cada persona.</p>
+  <h3>Asesor sénior de admisiones · piloto</h3>
+  <div class="cand-grid">
+    <div class="cand-card cand-top">
+      <div class="cand-head"><div><h4>Wilson</h4><p class="cand-meta">Asesor de admisiones · Bucaramanga (Colombia)</p></div><span class="pill pill-a">Propuesto 1</span></div>
+      <p><strong>Experiencia.</strong> Consultor de educación internacional en dos agencias de estudios en el extranjero, donde asesoraba a estudiantes y familias sobre programas en Canadá y Australia, y coordinador de admisiones en una institución educativa internacional, con procesos de admisión, documentación y CRM de solicitantes. Superaba sus objetivos de venta y mejoró un 8 % la conversión de leads en eventos de captación. Administrador de empresas; cursa un máster.</p>
+      <p><strong>Por qué encaja con GSG.</strong> Es el perfil más cercano al de GSG: conoce el recorrido de un estudiante que quiere estudiar fuera, el mercado colombiano y el trato con las familias, y trabaja en vuestro horario.</p>
+      <p class="cand-val"><strong>A validar en la entrevista.</strong> Su nivel de inglés frente al B2 que pide el puesto, sus cifras de cierre y un roleplay con un padre y un alumno.</p>
+      <table class="cand-tbl"><tbody><tr><td class="label">Huso</td><td>UTC-5, el de Lima y Bogotá</td></tr><tr><td class="label">Disponibilidad</td><td>Tarde-noche y fines de semana, a confirmar</td></tr><tr><td class="label">Idiomas</td><td>Español nativo; inglés A2</td></tr></tbody></table>
+    </div>
+    <div class="cand-card cand-top">
+      <div class="cand-head"><div><h4>Celeste</h4><p class="cand-meta">Closer de programas educativos · Córdoba (Argentina)</p></div><span class="pill pill-a">Propuesta 2</span></div>
+      <p><strong>Experiencia.</strong> Cierra programas educativos digitales con familias en dos plataformas internacionales. En la primera firmó la venta de mayor importe de la compañía (4.420 USD) y estuvo entre las seis mejores en conversión de un equipo de unos 200 closers, con picos de más del 35 %. En la segunda lleva 18.000 USD vendidos en 2026, y sus clases de prueba se usan para formar a nuevos vendedores. Antes fue coordinadora comercial en un instituto y formó equipos de venta.</p>
+      <p><strong>Por qué encaja con GSG.</strong> Está acostumbrada a cerrar con dos decisores a la vez, padre o madre y alumno, en programas educativos de valor alto, que es la venta de Admission Academy.</p>
+      <p class="cand-val"><strong>A validar en la entrevista.</strong> Que cubra la tarde de Lima de forma estable, su nivel de inglés y su adaptación al ciclo más largo de una admisión internacional.</p>
+      <table class="cand-tbl"><tbody><tr><td class="label">Huso</td><td>UTC-3, dos horas por delante de Lima</td></tr><tr><td class="label">Disponibilidad</td><td>Remoto; tarde de Lima a confirmar</td></tr><tr><td class="label">Idiomas</td><td>Español nativo; inglés B1</td></tr></tbody></table>
+    </div>
+  </div>
+  <h3>Alternativas para el perfil sénior</h3>
+  <details class="acc"><summary>Leonardo · Closer de formación · Buenos Aires<span class="sum-meta">Inglés B2</span></summary><div class="acc-body"><p>Cerró 30 inscripciones a un diplomado de unos 2.700 USD para el mercado latinoamericano y reactivó 1.000 contactos dormidos, que dieron 130 citas y 30 ventas. Hace entre 40 y 50 llamadas y reuniones a la semana. <strong>A validar:</strong> cobertura estable de la tarde de Lima y soltura con familias, porque su venta ha sido con el propio alumno.</p></div></details>
+  <details class="acc"><summary>José · Asesor de posgrados · España<span class="sum-meta">+15 años</span></summary><div class="acc-body"><p>Más de 15 años en venta consultiva de posgrados, MBA y formación profesional en escuelas de negocio españolas, con tickets de 1.000 a 10.000 €, y experiencia como director de un centro de formación. <strong>A validar:</strong> que acepte la franja de tarde-noche de Lima desde España y su conocimiento del mercado peruano y colombiano. Encaja sobre todo con el profesional que busca un MBA.</p></div></details>
+  <details class="acc"><summary>Ludmila · Asesora de admisiones · Tucumán<span class="sum-meta">Admisiones universitarias</span></summary><div class="acc-body"><p>Experiencia en admisión, seguimiento y retención de alumnos de universidades y escuelas de negocio de Latinoamérica y España, con ciclos largos y mucho seguimiento. Antes vendió cursos de capacitación profesional. <strong>A validar:</strong> cifras de inscripción, nivel de inglés y capacidad de cierre por videollamada.</p></div></details>
+  <p class="subnote" style="margin-top:12px;">En reserva quedan además Fabián (Córdoba, Argentina), closer de formación con disponibilidad de lunes a domingo, y Aarón (España), docente con inglés C1 habituado a hablar con alumnos y familias, aún con poca experiencia de cierre.</p>
+
+  <h3>Asesor de admisiones de volumen · segunda fase</h3>
+  <div class="cand-grid">
+    <div class="cand-card">
+      <div class="cand-head"><div><h4>Samuel</h4><p class="cand-meta">Closer de formación online · Cali (Colombia)</p></div><span class="pill pill-b">Propuesto 1</span></div>
+      <p><strong>Experiencia.</strong> Closer de cursos online en dos plataformas educativas: hacía clases de prueba consultivas con las familias y cerraba la inscripción, con un 35 % de cierre declarado sobre leads cualificados. Estudiante universitario.</p>
+      <p><strong>Por qué encaja con GSG.</strong> Joven, cercano al estudiante y acostumbrado a hablar con padres y alumno a la vez. Encaja con los cursos de examen y el paso a la asesoría, y puede crecer hacia el perfil sénior.</p>
+      <p class="cand-val"><strong>A validar en la entrevista.</strong> Que lleve tickets más altos que los de sus cursos actuales y su franja horaria.</p>
+      <table class="cand-tbl"><tbody><tr><td class="label">Huso</td><td>UTC-5</td></tr><tr><td class="label">Idiomas</td><td>Español; inglés B1</td></tr></tbody></table>
+    </div>
+    <div class="cand-card">
+      <div class="cand-head"><div><h4>Nancy</h4><p class="cand-meta">Asesora comercial · Montería (Colombia)</p></div><span class="pill pill-b">Propuesta 2</span></div>
+      <p><strong>Experiencia.</strong> Vende cursos y programas en una plataforma de formación online y suma más de 8 años de venta remota por teléfono y videollamada, con prospección, demostraciones y cierre. Trabaja a diario con WhatsApp Business y CRM.</p>
+      <p><strong>Por qué encaja con GSG.</strong> Ritmo de volumen y mucho WhatsApp, que es lo que piden los leads ya captados y los cursos de examen.</p>
+      <p class="cand-val"><strong>A validar en la entrevista.</strong> Cifras de cierre, nivel de inglés y tiempo real en formación.</p>
+      <table class="cand-tbl"><tbody><tr><td class="label">Huso</td><td>UTC-5</td></tr><tr><td class="label">Disponibilidad</td><td>Con experiencia en fines de semana</td></tr></tbody></table>
+    </div>
+  </div>
+  <div class="callout"><strong>Cómo seguimos:</strong> para completar el piloto mantenemos abierta una búsqueda específica de asesores de admisiones con experiencia en educación internacional e inglés B2 o superior, con prioridad en Lima y Bogotá: universidades privadas, colegios IB, escuelas de negocio y agencias de intercambio. En cuanto el comité valide la propuesta, cerramos entrevistas y roleplays y os presentamos a los finalistas.</div>
+</section>
+
+<div class="seal-divider"><span class="line"></span><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="line right"></span></div>
+
+<section id="encaje">
+  <div class="section-tag">11 · Propuesta</div>
+  <h2>Dónde actuaría el equipo de cierre</h2>
+  <p>Ante las familias, el puesto se presenta como <strong>asesor de admisiones</strong>. Estos son los frentes donde más valor aporta:</p>
+  <div class="phase"><div class="num active">1</div><div class="phase-body"><h4>Admission Academy</h4><p>Llamadas de diagnóstico con los padres y presentación del plan según el grado del alumno. Es el producto de mayor valor y una decisión familiar meditada que necesita conversación.</p></div></div>
+  <div class="phase"><div class="num active">2</div><div class="phase-body"><h4>Direct Admission</h4><p>Cierre con alumnos que apuntan a universidades fuera de convenio. Ticket claro y propuesta fácil de explicar.</p></div></div>
+  <div class="phase"><div class="num active">3</div><div class="phase-body"><h4>Del curso a la asesoría</h4><p>Seguimiento a alumnos de TOEFL, SAT y GMAT tras su hora de asesoría incluida. Ya son clientes y confían en GSG.</p></div></div>
+  <div class="phase"><div class="num active">4</div><div class="phase-body"><h4>Leads ya captados</h4><p>Recuperación de diagnósticos, test vocacionales e inscritos a eventos que no llegaron a inscribirse. La inversión de captación ya está hecha.</p></div></div>
+  <div class="phase"><div class="num active">5</div><div class="phase-body"><h4>Países sin oficina</h4><p>Atención en remoto a Ecuador, Bolivia, México y Centroamérica. El test vocacional ya recibe leads de cualquier país.</p></div></div>
+  <div class="paybox" id="piloto">
+    <h3>Piloto propuesto · 90 días</h3>
+    <p>Uno o dos asesores sénior de Closer Search en Admission Academy, Direct Admission y recuperación de leads ya captados, durante la temporada de admisiones en curso. Con la vía 2, el piloto arranca además con la evaluación del equipo actual y la dirección de las dos redes.</p>
+    <div class="pay-grid">
+      <div class="pay-card"><div class="plan">Días 1–30</div><div class="amount">Arranque</div><p class="subnote" style="margin:0;">Formación, primeras llamadas, procedimiento en marcha y, en la vía 2, informe de evaluación del equipo.</p></div>
+      <div class="pay-card"><div class="plan">Días 31–60</div><div class="amount">Ajuste</div><p class="subnote" style="margin:0;">Revisión de indicadores, ajuste del guion, del reparto de leads y de los frentes.</p></div>
+      <div class="pay-card"><div class="plan">Días 61–90</div><div class="amount">Decisión</div><p class="subnote" style="margin:0;">Informe final y decisión conjunta sobre la siguiente fase.</p></div>
+    </div>
+  </div>
+  <h3>Indicadores con los que se evalúa</h3>
+  <ul class="checklist conds">
+    <li><span class="box"></span><span><strong>Velocidad:</strong> tiempo hasta el primer contacto y porcentaje de leads contactados el mismo día.</span></li>
+    <li><span class="box"></span><span><strong>Cobertura:</strong> porcentaje de leads con diagnóstico realizado y de leads ya captados recuperados.</span></li>
+    <li><span class="box"></span><span><strong>Conversión:</strong> inscripciones por producto y tasa de conversión de diagnóstico a inscripción, frente a vuestra situación de partida.</span></li>
+    <li><span class="box"></span><span><strong>Calidad:</strong> cero promesas de admisión o beca, encaje de cada inscrito con su programa y feedback de los counselors.</span></li>
+    <li><span class="box"></span><span><strong>Información:</strong> informe de cada llamada en el CRM y motivos de no inscripción, trasladados a marketing.</span></li>
+  </ul>
+  <p>Los objetivos concretos de cada indicador se fijan en el diagnóstico con vuestros datos de partida. Al cierre del piloto, cualquiera de las dos partes puede decidir no continuar, con un preaviso que acordaremos en el contrato.</p>
+</section>
+
+<div class="seal-divider"><span class="line"></span><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="line right"></span></div>
+
+<section id="garantias">
+  <div class="section-tag">12 · Propuesta</div>
+  <h2>Continuidad y control</h2>
+  <p>La rotación y la supervisión fueron dos de los retos que nos trasladaste. Así los resolvemos:</p>
+  <ul class="checklist conds">
+    <li><span class="box"></span><span><strong>Sustitución sin coste:</strong> si un asesor causa baja o no rinde, lo sustituimos desde nuestra base de talento y lo formamos nosotros. La cobertura no se interrumpe.</span></li>
+    <li><span class="box"></span><span><strong>Supervisión a nuestro cargo:</strong> la dirección diaria del equipo es responsabilidad de Closer Search. GSG no necesita microgestionar a nadie.</span></li>
+    <li><span class="box"></span><span><strong>Visibilidad total:</strong> cada llamada queda registrada en el CRM de GSG con su ficha e informe, y GSG recibe un informe periódico de actividad, conversión y objeciones.</span></li>
+    <li><span class="box"></span><span><strong>Flexibilidad:</strong> el equipo se refuerza en picos de temporada y se reduce cuando baja la demanda.</span></li>
+    <li><span class="box"></span><span><strong>Coordinación con los counselors:</strong> el equipo cierra y traspasa la familia al counselor de GSG, que sigue siendo quien presta el servicio.</span></li>
+    <li><span class="box"></span><span><strong>Evaluación continua:</strong> el desempeño de cada persona, interna o externa, se revisa con los mismos criterios, y las decisiones sobre el equipo se toman con datos.</span></li>
+    <li><span class="box"></span><span><strong>Protección de datos:</strong> el equipo trata datos de alumnos y familias, a menudo de menores. Firmamos un contrato de encargado del tratamiento conforme a la normativa aplicable, incluidas la Ley 29733 de Perú y la Ley 1581 de 2012 de Colombia, y los asesores acceden solo a los datos que necesitan.</span></li>
+    <li><span class="box"></span><span><strong>Un solo responsable:</strong> con la vía 2, el equipo interno y los asesores de Closer Search trabajan con el mismo método, los mismos indicadores y un único informe.</span></li>
+  </ul>
+</section>
+
+<div class="seal-divider"><span class="line"></span><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="line right"></span></div>
+
+<section id="pasos">
+  <div class="section-tag">13 · Próximos pasos</div>
+  <h2>Para validar y próximos pasos</h2>
+  <h3>Lo que necesitamos que el comité confirme</h3>
+  <ul class="checklist">
+    <li><span class="box"></span><span>Qué vía prefiere GSG: equipo de cierre de Closer Search (vía 1) o dirección comercial integral con las dos redes (vía 2).</span></li>
+    <li><span class="box"></span><span>Con la vía 2, número de personas del área comercial y de counselors que entrarían en la evaluación y la dirección.</span></li>
+    <li><span class="box"></span><span>Qué productos y frentes entrarían en el piloto.</span></li>
+    <li><span class="box"></span><span>Precio de los planes de Admission Academy y forma de pago.</span></li>
+    <li><span class="box"></span><span>Cómo remunera la universidad a GSG por cada alumno del programa AAP y en qué momento se cobra.</span></li>
+    <li><span class="box"></span><span>Volumen mensual de leads por canal y país, y conversión actual de diagnóstico a inscripción.</span></li>
+    <li><span class="box"></span><span>CRM, telefonía y uso de WhatsApp, y el acceso que tendría el equipo.</span></li>
+    <li><span class="box"></span><span>Interlocutor de GSG para el día a día del proyecto.</span></li>
+  </ul>
+  <h3 id="calendario">Próximos pasos y calendario orientativo</h3>
+  <div class="phase"><div class="num active">1</div><div class="phase-body"><h4>Validación del comité · semana del 2 de noviembre</h4><p>GSG revisa este informe y nos traslada sus comentarios o correcciones.</p></div></div>
+  <div class="phase"><div class="num active">2</div><div class="phase-body"><h4>Cuestionario y llamada de diagnóstico · semana del 9 de noviembre</h4><p>Con vuestras respuestas cerramos la vía, los frentes, los importes, los indicadores y el calendario. Agenda: cal.com/davidmartinezbayer/diagnostico</p></div></div>
+  <div class="phase"><div class="num active">3</div><div class="phase-body"><h4>Firma · antes del 13 de noviembre</h4><p>Acuerdo de colaboración y contrato de encargado del tratamiento de datos.</p></div></div>
+  <div class="phase"><div class="num active">4</div><div class="phase-body"><h4>Evaluación, selección y formación · del 16 al 27 de noviembre</h4><p>Entrevistas de los asesores, que también entrevistáis vosotros, formación en vuestro producto y, en la vía 2, evaluación del equipo actual.</p></div></div>
+  <div class="phase"><div class="num active">5</div><div class="phase-body"><h4>Arranque del piloto · lunes 30 de noviembre</h4><p>Primeras llamadas en plena temporada de admisiones, con revisiones a los 30, 60 y 90 días.</p></div></div>
+  <div class="promise" style="margin-top:28px;">Tenéis la marca, la red de universidades y un equipo cercano a las familias. Lo que os proponemos es un método común y una dirección que sostenga el resultado, temporada tras temporada.</div>
+  <div class="card" style="margin-top:22px;"><h4>David Martínez-Bayer</h4><p>CEO y Fundador de Closer Search<br>david@closersearch.com · www.closersearch.com</p></div>
+</section>
+
+<footer class="site-footer">
+  <div class="ft-grid">
+    <div class="ft-brand"><a class="logo" href="#top"><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#C9A84C" stroke-width="3" fill="#060606"/><polygon points="50,16 79,32 79,68 50,84 21,68 21,32" stroke="#8E763A" stroke-width="1.2" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#C9A84C" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="logo-text"><span class="brand-name">CLOSER<span class="search"> SEARCH</span></span><span class="logo-sub">Selección de talento de cierre</span></span></a><p>Seleccionamos, formamos y dirigimos equipos de cierre en remoto para empresas de formación y programas educativos.</p></div>
+    <div><h5>Este informe</h5><a href="#entendido">Diagnóstico</a><a href="#propuesta">Las dos vías</a><a href="#modelo">Modelo económico</a><a href="#candidatos">Candidatos</a><a href="#pasos">Próximos pasos</a></div>
+    <div><h5>GSG Education</h5><a href="https://gsgeducation.com" target="_blank" rel="noopener">gsgeducation.com</a><span>Lima · Bogotá</span></div>
+    <div><h5>Closer Search</h5><span>Closer Search Consulting S.L.</span><span>Barcelona</span><a href="https://www.closersearch.com" target="_blank" rel="noopener">www.closersearch.com</a></div>
+  </div>
+  <div class="ft-bottom">Confidencial · Preparado exclusivamente para GSG Education · Versión 2 · 29 de octubre de 2026 · © 2026 Closer Search · Documento elaborado con ayuda de inteligencia artificial y revisado por Closer Search.</div>
+</footer>
+</main>
+
+<script>
+(function(){
+  document.getElementById('mt').addEventListener('click',function(){document.body.classList.toggle('menu-open')});
+  document.getElementById('sn').addEventListener('click',function(ev){ if(ev.target.closest('a')) document.body.classList.remove('menu-open'); });
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var raw=a.getAttribute('href')||'';if(raw.charAt(0)==='#'&&raw.length>1){var el=document.getElementById(raw.slice(1));if(el){e.preventDefault();var hd=document.querySelector('header');var off=hd?hd.getBoundingClientRect().height+10:0;window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-off,behavior:'smooth'});}}},true);
+})();
+</script>
+
